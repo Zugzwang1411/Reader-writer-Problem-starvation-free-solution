@@ -7,11 +7,8 @@ We have a shared database and readers, read data from the shared databse and wri
 Pseudo code for starve free solution goes as:- 
 
 int reader_count=0
-
 binary semaphore enter=1;
-
 binary semaphore reader=1;
-
 binary semaphore writer=1;
 
 void Reader(){
