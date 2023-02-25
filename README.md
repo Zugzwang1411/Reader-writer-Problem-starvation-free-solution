@@ -97,7 +97,3 @@ Hence no deadlock occurs i.e. progress is satisfied.
 In the classical solution there is problem of infinite witing for writers but here the is bounded wait for both readers and writers as "enter" semaphore makes sure that no biase happens between reader and writer queries. Hence bounded wait criteria is satisfied.
 
 Hence we can satisfactorily say that the given solution is correct and starve free.
-2
- 
-
- 
