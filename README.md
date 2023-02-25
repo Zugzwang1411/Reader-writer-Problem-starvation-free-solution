@@ -1,5 +1,5 @@
 # Reader-writer-Problem-starvation-free-solution
-OS assignment
+
 We have to implement a solution for the reader-writers problem without any starvation.
 In classical solutions it is seen that starvation for writers happens which can be allowed in certain scenarios but in our solution we'll be aiming on reaching a solution where starvation doesn't happen.
 First let's understand what ar readers and writers here.
