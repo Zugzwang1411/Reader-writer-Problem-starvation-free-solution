@@ -15,33 +15,61 @@ binary semaphore reader=1;
 binary semaphore writer=1;
 
 void Reader(){
+
 while(1){
+
 P(enter)
+
  p(reader)
+ 
  reader_count++;
+ 
  if(reader_count==1)
+ 
    P(writer)
+   
  V(reader)
+ 
 V(enter)
+
 // Enter THE CRITICAL SECTION
+
 P(reader)
+
  reader_count--
+ 
 V(reader)
+
 if(reader_count==0)
+
 v(writer)
+
 }
+
 }
+
 **********************
+
 void Writer(){
+
 while(1){
+
 P(enter)
+
  p(writer)
+ 
  V(enter)
+ 
    // ENTERS CRITICAL SECTION
+   
 V(writer)
+
 }
+
 }
+
 *******************************
+
 Now we can understand how we are tackling the issue of starvation here.
 To mantain equality smong readers and writers we are introducing a new semaphore with name enter. This enter semaphore is not biased to any of the reader or writer.
 So if readers keep on coming then they will also get blocked and the writer which got blocked  earlier will get chance to execure hence overcoming the issure of starvation of writers.
